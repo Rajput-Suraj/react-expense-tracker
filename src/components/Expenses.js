@@ -5,7 +5,7 @@ import "./Expenses.css";
 
 const Expenses = ({ data }) => {
     return (
-        <>
+        <div className="expenses">
             {data.map((item) => (
                 <ExpenseItem
                     key={item.id}
@@ -14,7 +14,7 @@ const Expenses = ({ data }) => {
                     date={item.date}
                 />
             ))}
-        </>
+        </div>
     );
 };
 
