@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 
 import "./Expenses.css";
+import ExpensesFilter from "./ExpensesFilter";
 
 const Expenses = ({ data }) => {
+    const [year, setYear] = useState("2022");
+
+    const filterChangeHandler = (year) => {
+        setYear(year);
+    };
+
     return (
         <div className="expenses">
+            <ExpensesFilter onYearChange={filterChangeHandler} year={year} />
             {data.map((item) => (
                 <ExpenseItem
                     key={item.id}
